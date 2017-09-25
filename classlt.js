@@ -17,7 +17,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		var obj = $self.attr('data-classlt');
 		obj = obj.split(',');
 		
-		for(var i=0; i< obj.length; i++){
+		for(var i = 0; i < obj.length; i++){
 			var o = obj[i];
 			o = $.trim(o);
 			o = parseInt(o);
@@ -37,7 +37,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 	$('[data-classlt]').initialize(function(){
-		classltOne($(this));
+		var $self = $(this);
+		setTimeout(function(){
+			classltOne($self);
+		}, 10);
 	});
 
 	$(window).resize(classltAll);
